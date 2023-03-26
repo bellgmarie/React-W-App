@@ -1,5 +1,6 @@
 import React from "react";
 import Hollow from "./StickIcon";
+import UnitConvert from "./UnitConvert";
 
 export default function WeatherInfo(props) {
   return (
@@ -9,8 +10,7 @@ export default function WeatherInfo(props) {
           <Hollow code={props.data.icon} />
         </div>
         <div className="col-5 degreeTemp">
-          <span className="col-6 temp "> {props.data.temperature}°</span>
-          <span className="col-8 degreeChange">F | C</span>
+          <UnitConvert farenheit={props.data.temperature} />
         </div>
       </div>
       <div className="specifics text-capitalize">
