@@ -31,7 +31,7 @@ export default function Hey(props) {
   let year = [props.date.getFullYear()];
   let hours = addZero(props.date.getHours());
   let minutes = addZero(props.date.getMinutes() + 9);
-  let number = [props.date.getUTCDate()] - 1;
+  let number = [props.date.getUTCDate()];
 
   function addZero(i) {
     if (i < 10) {

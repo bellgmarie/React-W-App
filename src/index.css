@@ -86,8 +86,8 @@ canvas {
   margin-bottom: 10px;
 }
 .degreeTemp {
-  top: 45px;
   font-family: "Patrick Hand SC", cursive;
+  padding-top: 45px;
 }
 .temp {
   font-size: 100px;
@@ -98,12 +98,13 @@ canvas {
 .degreeChange {
   font-size: 32px;
   right: 50px;
+  top: 50px;
 }
 .specifics {
   margin-left: 0;
-  margin-top: 22px;
+  margin-top: 35px;
   font-family: "Patrick Hand SC", cursive;
-  font-size: 43px;
+  font-size: 38px;
 }
 
 .stickyNote {
