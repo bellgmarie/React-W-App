@@ -1,5 +1,6 @@
 import React from "react";
 import Hollow from "./StickIcon";
+
 export default function WeatherInfo(props) {
   return (
     <div className="extra">
@@ -9,7 +10,7 @@ export default function WeatherInfo(props) {
         </div>
         <div className="col-5 degreeTemp">
           <span className="col-6 temp "> {props.data.temperature}°</span>
-          <span className="col-7 degreeChange">F | C</span>
+          <span className="col-8 degreeChange">F | C</span>
         </div>
       </div>
       <div className="specifics text-capitalize">
