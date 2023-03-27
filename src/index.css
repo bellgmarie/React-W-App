@@ -79,10 +79,10 @@ a:-webkit-any-link:hover {
 }
 .pattern {
   height: 100%;
-  background-image: repeating-linear-gradient(white 0px, white 30px, teal 31px);
+  background-image: repeating-linear-gradient(white 0px, white 29px, teal 30px);
 }
 .title {
-  padding-top: 15px;
+  padding-top: 10px;
   font-size: 63px;
   font-family: "Patrick Hand SC", cursive;
   text-decoration: underline rgba(255, 0, 0, 0.6);
