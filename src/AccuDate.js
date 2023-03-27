@@ -41,7 +41,7 @@ export default function Hey(props) {
   }
 
   return (
-    <h2>
+    <h2 className="dateTime">
       Today's Date: {day} {month} {number}, {year}
       <br /> Today's Time: {hours} : {minutes}
     </h2>

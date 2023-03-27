@@ -43,7 +43,7 @@ export default function Weather(props) {
           <div className=" pattern ">
             <div>
               <h1 className="title">{weatherData.name}</h1>
-              <div className=" dateTime">
+              <div>
                 <Hey date={weatherData.date} />
               </div>
               <br />
