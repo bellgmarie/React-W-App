@@ -7,7 +7,7 @@ export default function WeatherInfo(props) {
     <div className="extra">
       <div className="row " id="middle">
         <div className="col-5 " id="stickyImg">
-          <Hollow code={props.data.icon} />
+          <Hollow code={props.data.icon} size={200} />
         </div>
         <div className="col-5 degreeTemp">
           <UnitConvert farenheit={props.data.temperature} />

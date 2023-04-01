@@ -11,16 +11,28 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       result: true,
-      temperature: Math.round(response.data.main.temp),
-      humidity: Math.round(response.data.main.humidity),
+      temperature: Math.round(response.data.temperature.current),
+      humidity: Math.round(response.data.temperature.humidity),
       wind: Math.round(response.data.wind.speed),
-      description: response.data.weather[0].description,
-      name: response.data.name,
-      icon: response.data.weather[0].icon,
-      date: new Date(response.data.dt * 1000),
+      description: response.data.condition.description,
+      name: response.data.city,
+      icon: response.data.condition.icon,
+      date: new Date(response.data.time * 1000),
     });
   }
-
+  /*
+  function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${name}n&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecasts);
+    console.log(apiUrl);
+  }
+  function displayForecasts(response) {
+    let forecast = response.data.daily;
+    console.log(forecast);
+  }
+*/
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -30,9 +42,10 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "d9faaf790769cf330ba3622ee099020a";
-    // https://api.openweathermap.org/data/2.5/weather?q=tokyo&units=imperial&appid=d9faaf790769cf330ba3622ee099020a
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=imperial&appid=${apiKey}`;
+    const apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
+
+    //https://api.shecodes.io/weather/v1/current?query=${name}&key=${apiKey}&units=imperial
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${name}&key=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
 

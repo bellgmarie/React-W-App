@@ -9,7 +9,7 @@ ul {
 canvas {
   overflow-clip-margin: content-box;
   overflow: clip;
-  width: 140px;
+  width: 134px;
 }
 a:-webkit-any-link {
   color: #ff3030;
@@ -117,9 +117,14 @@ a:-webkit-any-link:hover {
   font-family: "Patrick Hand SC", cursive;
   font-size: 38px;
 }
-
+.specialSticky {
+  margin-top: -29px;
+}
 .stickyNote {
   height: 0px;
+}
+.weatherForeDay {
+  margin-bottom: 5px;
 }
 
 #middle {
@@ -221,7 +226,7 @@ a:-webkit-any-link:hover {
   top: -1457px;
   width: 251px;
   height: 228px;
-  padding: 45px;
+  padding: 18px;
 
   outline-style: outset;
   outline-color: #1f4961;
@@ -241,7 +246,7 @@ a:-webkit-any-link:hover {
   top: -731px;
   width: 251px;
   height: 228px;
-  padding: 45px;
+  padding: 18px;
   outline-style: outset;
   outline-color: #1f4961;
   box-shadow: rgba(62, 138, 224, 0.2) 0 -25px 18px -14px inset,
@@ -261,7 +266,7 @@ a:-webkit-any-link:hover {
   top: -780px;
   width: 251px;
   height: 228px;
-  padding: 45px;
+  padding: 18px;
 
   outline-style: outset;
   outline-color: #1f4961;
@@ -281,7 +286,7 @@ a:-webkit-any-link:hover {
   top: -849px;
   width: 251px;
   height: 228px;
-  padding: 45px;
+  padding: 18px;
 
   outline-style: outset;
   outline-color: #1f4961;

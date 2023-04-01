@@ -1,20 +1,60 @@
+import React from "react";
+import Hollow from "./StickIcon";
 export default function StickyForecast(props) {
   return (
     <div className="stickyNote">
       <div className="note" id="first">
-        " monday yippie"
+        <div className="weatherForeSticky">
+          <div className="weatherForeDay"> monday </div>
+
+          <Hollow code="01d" size={200} />
+          <div className="WeatherForeTemp">
+            <span className="max">19</span>° / <span className="min">19</span>°
+          </div>
+        </div>
       </div>
       <div className="note" id="second">
-        "tuesday"
+        <div className="weatherForeSticky">
+          <div className="weatherForeDay"> monday </div>
+
+          <Hollow code="01d" size={200} />
+          <div className="WeatherForeTemp">
+            <span className="max">19</span>° / <span className="min">19</span>°
+          </div>
+        </div>
       </div>
       <div className="note" id="third">
-        "wednesday"
+        <div className="weatherForeSticky">
+          <div className="weatherForeDay"> monday </div>
+
+          <Hollow code="01d" size={200} />
+          <div className="WeatherForeTemp">
+            <span className="max">19</span>° / <span className="min">19</span>°
+          </div>
+        </div>
       </div>
       <div className="note" id="fourth">
-        "thursday"
+        <div className="weatherForeSticky">
+          <div className="weatherForeDay"> monday </div>
+
+          <Hollow code="01d" size={200} />
+          <div className="WeatherForeTemp">
+            <span className="max">19</span>° / <span className="min">19</span>°
+          </div>
+        </div>
       </div>
       <div className="note " id="last">
-        "friday"
+        <div className="weatherForeSticky">
+          <div className="specialSticky">
+            <div className="weatherForeDay"> friday </div>
+
+            <Hollow code="01d" size={200} />
+            <div className="WeatherForeTemp">
+              <span className="max">19</span>° / <span className="min">19</span>
+              °
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
