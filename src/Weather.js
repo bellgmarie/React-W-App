@@ -20,19 +20,7 @@ export default function Weather(props) {
       date: new Date(response.data.time * 1000),
     });
   }
-  /*
-  function getForecast(coordinates) {
-    console.log(coordinates);
-    let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${name}n&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayForecasts);
-    console.log(apiUrl);
-  }
-  function displayForecasts(response) {
-    let forecast = response.data.daily;
-    console.log(forecast);
-  }
-*/
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -89,7 +77,7 @@ export default function Weather(props) {
             </a>
           </h1>
         </div>
-        <StickyForecast />{" "}
+        <StickyForecast name={weatherData.name} />{" "}
       </div>
     );
   } else {
