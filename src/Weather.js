@@ -31,7 +31,6 @@ export default function Weather(props) {
 
   function search() {
     const apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
-
     //https://api.shecodes.io/weather/v1/current?query=${name}&key=${apiKey}&units=imperial
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${name}&key=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
@@ -77,11 +76,11 @@ export default function Weather(props) {
             </a>
           </h1>
         </div>
-        <StickyForecast name={weatherData.name} />{" "}
+        <StickyForecast data={weatherData} />
       </div>
     );
   } else {
     search();
-    return "Yippie!...";
+    return "Yippie!...Or not?";
   }
 }

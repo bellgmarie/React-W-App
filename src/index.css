@@ -9,7 +9,7 @@ ul {
 canvas {
   overflow-clip-margin: content-box;
   overflow: clip;
-  width: 134px;
+  width: 121px;
 }
 a:-webkit-any-link {
   color: #ff3030;
@@ -124,9 +124,16 @@ a:-webkit-any-link:hover {
   height: 0px;
 }
 .weatherForeDay {
-  margin-bottom: 5px;
-}
+  margin-bottom: 0px;
 
+  font-weight: bold;
+}
+.max {
+  font-size: 28px;
+}
+.weatherForeStickyOne {
+  margin-top: -8px;
+}
 #middle {
   margin-top: 11px;
 }
@@ -202,12 +209,11 @@ a:-webkit-any-link:hover {
 }
 #last {
   background-color: #fff39eb3;
-  left: 557px;
-  top: -1288px;
-  width: 251px;
+  left: 565px;
+  top: -1281px;
+  width: 246px;
   height: 228px;
-  padding: 45px;
-
+  padding: 34px;
   outline-style: outset;
   outline-color: #61551f;
   box-shadow: rgba(62, 138, 224, 0.2) 0 -25px 18px -14px inset,

@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Hey(props) {
-  console.log(props.date);
   let days = [
     "Sunday",
     "Monday",
@@ -30,7 +29,7 @@ export default function Hey(props) {
   let month = months[props.date.getMonth()];
   let year = [props.date.getFullYear()];
   let hours = addZero(props.date.getHours());
-  let minutes = addZero(props.date.getMinutes() + 9);
+  let minutes = addZero(props.date.getMinutes());
   let number = [props.date.getUTCDate()];
 
   function addZero(i) {

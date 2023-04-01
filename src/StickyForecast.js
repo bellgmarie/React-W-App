@@ -1,85 +1,55 @@
-import React from "react";
-import Hollow from "./StickIcon";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import WeatherForecastDay from "./ForecastDay";
+import { cleanup } from "@testing-library/react";
 
 export default function StickyForecast(props) {
+  let [loaded, setLoad] = useState(false);
+  let [forecast, setForecast] = useState(null);
+
+  useEffect(() => {
+    setLoad(false);
+  }, [props.name]);
+  //hmmm ^ or rpops.name
   function handleResponse(response) {
+    setForecast(response.data.daily);
+    setLoad(true);
     console.log(response.data);
   }
 
-  let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
+  if (loaded) {
+    return (
+      <div className="stickyNote">
+        <div className="note" id="first">
+          <WeatherForecastDay data={forecast[0]} />
+        </div>
 
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.name}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
+        <div className="note" id="second">
+          <WeatherForecastDay data={forecast[1]} />
+        </div>
 
-  return (
-    <div className="stickyNote">
-      <div className="note" id="first">
-        <div className="weatherForeSticky">
-          <div className="weatherForeDay"> monday </div>
+        <div className="note" id="third">
+          <WeatherForecastDay data={forecast[2]} />
+        </div>
 
-          <Hollow code="01d" size={200} />
-          <div className="WeatherForeTemp">
-            <span className="max">19</span>° / <span className="min">19</span>°
+        <div className="note" id="fourth">
+          <WeatherForecastDay data={forecast[3]} />
+        </div>
+
+        <div className="note " id="last">
+          <div className="weatherForeStickyOne">
+            <WeatherForecastDay data={forecast[4]} />
           </div>
         </div>
       </div>
-      <div className="note" id="second">
-        <div className="weatherForeSticky">
-          <div className="weatherForeDay"> monday </div>
-
-          <Hollow code="01d" size={200} />
-          <div className="WeatherForeTemp">
-            <span className="max">19</span>° / <span className="min">19</span>°
-          </div>
-        </div>
-      </div>
-      <div className="note" id="third">
-        <div className="weatherForeSticky">
-          <div className="weatherForeDay"> monday </div>
-
-          <Hollow code="01d" size={200} />
-          <div className="WeatherForeTemp">
-            <span className="max">19</span>° / <span className="min">19</span>°
-          </div>
-        </div>
-      </div>
-      <div className="note" id="fourth">
-        <div className="weatherForeSticky">
-          <div className="weatherForeDay"> monday </div>
-
-          <Hollow code="01d" size={200} />
-          <div className="WeatherForeTemp">
-            <span className="max">19</span>° / <span className="min">19</span>°
-          </div>
-        </div>
-      </div>
-      <div className="note " id="last">
-        <div className="weatherForeSticky">
-          <div className="specialSticky">
-            <div className="weatherForeDay"> friday </div>
-
-            <Hollow code="01d" size={200} />
-            <div className="WeatherForeTemp">
-              <span className="max">19</span>° / <span className="min">19</span>
-              °
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-/*
-  function getForecast(coordinates) {
-    console.log(coordinates);
+    );
+  } else {
     let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${name}n&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayForecasts);
-    console.log(apiUrl);
+    let name = props.name;
+    //^^^is this calling too mucH ? changedfrom props.data.name
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${name}&key=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return null;
   }
-  function displayForecasts(response) {
-    let forecast = response.data.daily;
-    console.log(forecast);
-  }
-*/
+}
