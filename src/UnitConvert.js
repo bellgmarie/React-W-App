@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 export default function UnitConvert(props) {
   const [unit, setUnit] = useState("imperial");
-  function convertCelsius(event) {
+  /*  function convertCelsius(event) {
     event.preventDefault();
     setUnit("convertFahrenheit");
-  }
+  } */
   function convertFarenheit(event) {
     event.preventDefault();
     setUnit("imperial");
@@ -21,7 +21,18 @@ export default function UnitConvert(props) {
       </div>
     );
   } else {
-    let celsiusTemperature = ((props.farenheit - 32) * 5) / 9;
+    return (
+      <div>
+        <span className="col-6 temp "> {props.farenheit}</span>
+        <span className="col-8 degreeChange ">
+          <span className="Unit">awww im not workin</span>
+        </span>
+      </div>
+    );
+  }
+}
+/* 
+let celsiusTemperature = ((props.farenheit - 32) * 5) / 9;
 
     return (
       <div>
@@ -35,6 +46,4 @@ export default function UnitConvert(props) {
           </span>
         </span>
       </div>
-    );
-  }
-}
+*/
