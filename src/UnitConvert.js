@@ -14,14 +14,9 @@ export default function UnitConvert(props) {
   if (unit === "imperial") {
     return (
       <div>
-        <span className="col-6 temp "> {props.farenheit}°</span>
+        <span className="col-6 temp "> {props.farenheit}</span>
         <span className="col-8 degreeChange ">
-          <span className="Unit">
-            F |{" "}
-            <a href="/" onClick={convertCelsius}>
-              C
-            </a>{" "}
-          </span>
+          <span className="Unit">°F</span>
         </span>
       </div>
     );
