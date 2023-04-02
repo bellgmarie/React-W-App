@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherForecastDay from "./ForecastDay";
-import { cleanup } from "@testing-library/react";
 
 export default function StickyForecast(props) {
   let [loaded, setLoad] = useState(false);
@@ -9,12 +8,11 @@ export default function StickyForecast(props) {
 
   useEffect(() => {
     setLoad(false);
-  }, [props.name]);
+  }, [props.data.name]);
   //hmmm ^ or rpops.name
   function handleResponse(response) {
     setForecast(response.data.daily);
     setLoad(true);
-    console.log(response.data);
   }
 
   if (loaded) {
@@ -45,7 +43,7 @@ export default function StickyForecast(props) {
     );
   } else {
     let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
-    let name = props.name;
+    let name = props.data.name;
     //^^^is this calling too mucH ? changedfrom props.data.name
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${name}&key=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
