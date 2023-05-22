@@ -45,6 +45,7 @@ export default function StickyForecast(props) {
     let apiKey = "f0fc91db3aoa04a9t8419fe6b4378f88";
     let name = props.data.name;
     //^^^is this calling too mucH ? changedfrom props.data.name
+    //https://api.shecodes.io/weather/v1/forecast?query=new york&key=f0fc91db3aoa04a9t8419fe6b4378f88&units=imperial
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${name}&key=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
 
